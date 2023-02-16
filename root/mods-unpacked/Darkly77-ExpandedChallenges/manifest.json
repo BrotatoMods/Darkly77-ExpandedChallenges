@@ -4,7 +4,9 @@
 	"version_number": "1.0.0",
 	"description": "Gives you lots more options for your custom challenges, including D5 unlocks.",
 	"website_url": "https://github.com/BrotatoMods/Darkly77-ExpandedChallenges",
-	"dependencies": [],
+	"dependencies": [
+		"Darkly77-Brotils"
+	],
 	"extra": {
 		"godot": {
 			"incompatibilities": [],
