@@ -31,8 +31,8 @@ func extch_check_custom_completion_challenges(won_ron:bool = false)->void:
 #   won_ron   = True if this is triggered after winning a run. Used to check for danger level completion
 func _extch_check_single_custom_challenge(challenge, do_unlock:bool = true, won_ron:bool = false)->bool:
 	#@todo: Remove this temp debug logging stuff
-	# ModLoaderUtils.log_debug("Checking custom challenge", EXTCH_LOG)
-	# ModLoaderUtils.log_debug_json_print("Custom challenge data:", challenge.cl_get_challenge_dict(), EXTCH_LOG)
+	# ModLoaderLog.debug("Checking custom challenge", EXTCH_LOG)
+	# ModLoaderLog.debug_json_print("Custom challenge data:", challenge.cl_get_challenge_dict(), EXTCH_LOG)
 
 	var character = challenge.required_character
 	var danger_number = challenge.required_danger_number
@@ -99,12 +99,12 @@ func _extch_check_single_custom_challenge(challenge, do_unlock:bool = true, won_
 		can_unlock_challenge = false
 
 	if can_unlock_challenge:
-		ModLoaderUtils.log_debug("[check_single_custom_challenge] OK: Challenge can be unlocked! (" + tr(challenge.name) + ")", EXTCH_LOG)
+		ModLoaderLog.debug("[check_single_custom_challenge] OK: Challenge can be unlocked! (" + tr(challenge.name) + ")", EXTCH_LOG)
 		if do_unlock:
 			complete_challenge(challenge.my_id)
 	else:
 		#@todo: Fix this. It created 1449 logs when I tested it (161 logs per challenge, with 9 custom challenges being used)
-		# ModLoaderUtils.log_debug("[check_single_custom_challenge] NO: Challenge requirements not met (" + tr(challenge.name) + ")", EXTCH_LOG)
+		# ModLoaderLog.debug("[check_single_custom_challenge] NO: Challenge requirements not met (" + tr(challenge.name) + ")", EXTCH_LOG)
 		pass
 
 	return can_unlock_challenge
