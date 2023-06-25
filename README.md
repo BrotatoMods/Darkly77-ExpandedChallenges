@@ -68,3 +68,12 @@ Which would be displayed in-game as:
 - You can use `\n` to create new lines in translation strings.
 - If your translation string has a comma (`,`), you **must** wrap the full string in quotes, eg `"my string, is this"`
   - If you don't do this, that string, and any strings that follow it, will not work.
+
+## Notes on Vanilla Challenges
+
+You might not need ExdpandedChallenges. The vanilla challenge_data resource can handle the following unlock types:
+
+- Win a Danger0 (D0) run with a specific character
+    - You need to name your challenge like this: `CHARACTER_{character_name}`. Eg if your character is called COOLGUY, then the challenge should be called `CHARACTER_COOLGUY`. Note that this applies to the **Name**, not the **My ID**.
+- Achieve a certain stat
+    - Set the stat name in the **Stat** field (eg. `stat_range`), and the required stat value in the **Value** field (eg, `300`). See *perfect_vision_data.tres* for an example.
